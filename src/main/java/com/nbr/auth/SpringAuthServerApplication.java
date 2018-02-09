@@ -6,11 +6,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
 import com.nbr.auth.domain.Account;
 import com.nbr.auth.service.AccountRepository;
 
 @SpringBootApplication
+@EnableResourceServer
 public class SpringAuthServerApplication {
 
 	@Bean
@@ -24,4 +26,5 @@ public class SpringAuthServerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringAuthServerApplication.class, args);
 	}
+
 }

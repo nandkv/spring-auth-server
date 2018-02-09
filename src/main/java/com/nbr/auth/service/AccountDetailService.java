@@ -21,8 +21,7 @@ public class AccountDetailService implements UserDetailsService {
 				.map(account -> new User(account.getUsername(), account.getPassword(), account.isActive(),
 						account.isActive(), account.isActive(), account.isActive(),
 						AuthorityUtils.createAuthorityList("ROLE_ADMIN", "ROLE_USER")))
-				.orElseThrow(
-						() -> new UsernameNotFoundException("Could not find hte user for username" + username + "!!!"));
+				.orElseThrow(() -> new UsernameNotFoundException("Could not find the user for username" + username));
 	}
 
 }

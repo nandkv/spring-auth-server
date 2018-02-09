@@ -23,7 +23,8 @@ public class AuthServiceConfiguration extends AuthorizationServerConfigurerAdapt
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		clients.inMemory().withClient("api").secret("password").authorizedGrantTypes("password").scopes("openid");
+		clients.inMemory().withClient("client").secret("secret")
+				.authorizedGrantTypes("authorization_code", "password", "refresh_token").scopes("openid");
 	}
 
 }
